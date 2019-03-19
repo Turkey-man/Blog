@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.3)
+  - LGButton (1.0.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - LGButton
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - LGButton
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  LGButton: 707ce916eb80b73a6c4688df34bee11adbafb663
+
+PODFILE CHECKSUM: 7c520b46dc5715d6a128a21eb3a2a42cbb4e445a
+
+COCOAPODS: 1.6.1

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Blog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My news" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbI-pd-6k5">
+                                <rect key="frame" x="16" y="109" width="148.5" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED, OCT 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgC-sW-1Km">
+                                <rect key="frame" x="16" y="79" width="119" height="20"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-rV-qIP" customClass="RoundedButton" customModule="Blog" customModuleProvider="target">
+                                <rect key="frame" x="311" y="123" width="48" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Topics"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H4I-fw-Hkf">
+                                <rect key="frame" x="0.0" y="156" width="375" height="462"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZiP-dE-gUh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hX9-KM-0Gc"/>
+                                </connections>
+                            </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-Ee-wIQ">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="My news" image="forYou" id="QvS-7D-F4C"/>
+                                    <tabBarItem title="World news" image="worldwide1Copy" id="oJC-Dn-TfN"/>
+                                    <tabBarItem title="Search" image="search" id="43C-Ty-gtK"/>
+                                    <tabBarItem title="Saved" image="saved" id="rzk-vH-DWK"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="k3N-Ee-wIQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Pd-EB-2P6"/>
+                            <constraint firstItem="vgC-sW-1Km" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="3BU-fK-AzH"/>
+                            <constraint firstItem="rbI-pd-6k5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="89" id="DV3-jy-gpK"/>
+                            <constraint firstItem="rbI-pd-6k5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="J1V-I1-uXz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yG8-rV-qIP" secondAttribute="trailing" constant="16" id="Oj3-Mt-Tyf"/>
+                            <constraint firstItem="H4I-fw-Hkf" firstAttribute="top" secondItem="rbI-pd-6k5" secondAttribute="bottom" constant="4" id="Q3B-Jv-qj4"/>
+                            <constraint firstItem="vgC-sW-1Km" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QUA-3n-q4h"/>
+                            <constraint firstItem="k3N-Ee-wIQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SaM-s7-Nyg"/>
+                            <constraint firstItem="H4I-fw-Hkf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ad3-j5-EQg"/>
+                            <constraint firstItem="k3N-Ee-wIQ" firstAttribute="top" secondItem="H4I-fw-Hkf" secondAttribute="bottom" id="dec-UP-mn6"/>
+                            <constraint firstItem="H4I-fw-Hkf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dlw-Jt-ETK"/>
+                            <constraint firstItem="yG8-rV-qIP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="ekB-mm-V9C"/>
+                            <constraint firstItem="k3N-Ee-wIQ" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="wJ5-t1-HBj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="H4I-fw-Hkf" id="TgQ-0o-6go"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.03448275862069"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="forYou" width="24" height="24"/>
+        <image name="saved" width="16" height="23"/>
+        <image name="search" width="21" height="22"/>
+        <image name="worldwide1Copy" width="25" height="25"/>
+    </resources>
+</document>
