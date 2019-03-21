@@ -10,19 +10,22 @@ import UIKit
 import Alamofire
 
 public class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
     @IBOutlet weak var tableView: UITableView!
     
-    public var contentArray = [Content]()
+    private var contentArray = [Content]()
+    private let global = Global()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.setuptableView()
-        Network.getTokenBy()
         Network.getData { (something: ObtainedData) in
             self.contentArray = something.content
+            if something.content != nil {
             self.tableView.reloadData()
+            } else {
+                 self.global.alertController.alert(title: "Error", message: "Failed to retrieve data!", style: .alert, presentOn: self)
+            }
         }
     }
     

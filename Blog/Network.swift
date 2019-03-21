@@ -1,5 +1,5 @@
 //
-//  Networking.swift
+//  Network.swift
 //  AlamofireTesting
 //
 //  Created by 1 on 3/17/19.
@@ -7,26 +7,35 @@
 //
 
 import Alamofire
-
+//"eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIyIiwiZXhwIjoxNTUzNDYyODA3LCJyYW5kb20iOjU4ODMsInJvbGUiOiJST0xFX0NMSUVOVCJ9.kjarz6dGLvgLureFE19C24wXIVGi1n80Q9h7XrOuDINGPk51lsO0J3-gH9hrU_Fz_qR7ZEvPbmbmO1YwhxE5iw"
 public class Network {
-    public static func getTokenBy() {
-        request("https://storm.ualegion.com/api/v1/security/auth/login", method: .post, parameters: ["login" : "fed", "password" : "1234567a"], encoding: JSONEncoding.default).responseData { response in
+    private static let url = "https://storm.ualegion.com/api/v1/security/auth/login"
+    private static let parameters = ["login" : "fed", "password" : "1234567a"]
+    private static let gerRequestUrl = "https://storm.ualegion.com/api/v1/projects/my"
+    private static let global = Global()
+    private static let ttt = global.defaults.string(forKey: "token")
+    
+    public static func getToken<T: Decodable>(completionHandler: @escaping (T) -> Void) {
+        request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
             let json = response.data
-            do {
-                let data = try JSONDecoder().decode(Login.self, from: json!)
+            goToNetwork(json: json!, completionHandler: completionHandler)
+//            do {
+//                let data = try JSONDecoder().decode(Login.self, from: json!)
+//
+//                self.global.defaults.set(String(data.token!), forKey: "token")
 //                print("NEW DATA")
 //                print(data.token)
-            } catch {
-                print(error.localizedDescription)
-            }
+//            } catch {
+//                print(error.localizedDescription)
+//            }
         }
     }
 
     public static func getData<T: Decodable>(completionHandler: @escaping (T) -> Void) {
-        let token = "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIyIiwiZXhwIjoxNTUzNDYyODA3LCJyYW5kb20iOjU4ODMsInJvbGUiOiJST0xFX0NMSUVOVCJ9.kjarz6dGLvgLureFE19C24wXIVGi1n80Q9h7XrOuDINGPk51lsO0J3-gH9hrU_Fz_qR7ZEvPbmbmO1YwhxE5iw"
-        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
+        let token = global.defaults.string(forKey: "token")
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token!)"]
         
-        request("https://storm.ualegion.com/api/v1/projects/my", method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in
+        request(gerRequestUrl, method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in
             let json = response.data
 //            print("JSON")
 //            print(json)
