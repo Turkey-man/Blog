@@ -15,5 +15,5 @@ extension UIButton {
         let attributedString = NSMutableAttributedString(string: text)
         attributedString.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: NSRange(location: 0, length: text.count))
         self.setAttributedTitle(attributedString, for: .normal)
-}
+    }
 }

@@ -13,7 +13,8 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     private var contentArray = [Content]()
-    private let global = Global()
+    private let storage = Storage()
+    private let alertController = UIAlertController()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
             if something.content != nil {
             self.tableView.reloadData()
             } else {
-                 self.global.alertController.alert(title: "Error", message: "Failed to retrieve data!", style: .alert, presentOn: self)
+                 self.alertController.alert(title: "Error", message: "Failed to retrieve data!", style: .alert, presentOn: self)
             }
         }
     }

@@ -12,8 +12,7 @@ public class Network {
     private static let url = "https://storm.ualegion.com/api/v1/security/auth/login"
     private static let parameters = ["login" : "fed", "password" : "1234567a"]
     private static let gerRequestUrl = "https://storm.ualegion.com/api/v1/projects/my"
-    private static let global = Global()
-    private static let ttt = global.defaults.string(forKey: "token")
+    private static let storage = Storage()
     
     public static func getToken<T: Decodable>(completionHandler: @escaping (T) -> Void) {
         request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
@@ -32,7 +31,7 @@ public class Network {
     }
 
     public static func getData<T: Decodable>(completionHandler: @escaping (T) -> Void) {
-        let token = global.defaults.string(forKey: "token")
+        let token = storage.defaults.string(forKey: "token")
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token!)"]
         
         request(gerRequestUrl, method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in

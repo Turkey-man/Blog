@@ -1,5 +1,5 @@
 //
-//  Global.swift
+//  Storage.swift
 //  Blog
 //
 //  Created by 1 on 20.03.19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Global {
+public class Storage {
     public let defaults = UserDefaults.standard
     public let alertController = UIAlertController()
 }

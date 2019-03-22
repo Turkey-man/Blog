@@ -22,7 +22,7 @@
 		63A571C4224289D800ED597E /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571C3224289D800ED597E /* UnderlinedTextField.swift */; };
 		63A571C722428CE900ED597E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571C622428CE900ED597E /* LoginViewController.swift */; };
 		63A571C92242922C00ED597E /* UnderlinedButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571C82242922C00ED597E /* UnderlinedButtonText.swift */; };
-		63A571CB224299A200ED597E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571CA224299A200ED597E /* Global.swift */; };
+		63A571CB224299A200ED597E /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571CA224299A200ED597E /* Storage.swift */; };
 		63A571CD224299CF00ED597E /* InfoCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571CC224299CF00ED597E /* InfoCheck.swift */; };
 		63A571CF22429CC200ED597E /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571CE22429CC200ED597E /* HideKeyboard.swift */; };
 		63A571D122429CE100ED597E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A571D022429CE100ED597E /* AlertController.swift */; };
@@ -51,7 +51,7 @@
 		63A571C3224289D800ED597E /* UnderlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		63A571C622428CE900ED597E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63A571C82242922C00ED597E /* UnderlinedButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButtonText.swift; sourceTree = "<group>"; };
-		63A571CA224299A200ED597E /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		63A571CA224299A200ED597E /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		63A571CC224299CF00ED597E /* InfoCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCheck.swift; sourceTree = "<group>"; };
 		63A571CE22429CC200ED597E /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		63A571D022429CE100ED597E /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				63A571C622428CE900ED597E /* LoginViewController.swift */,
 				63A37CBF223BA98F00C26293 /* MainViewController.swift */,
 				63B036CC223E847D0062C791 /* Network.swift */,
-				63A571CA224299A200ED597E /* Global.swift */,
+				63A571CA224299A200ED597E /* Storage.swift */,
 				63A571CC224299CF00ED597E /* InfoCheck.swift */,
 				63A571D22242AA4E00ED597E /* RegEx.swift */,
 				63A571BA22426BC000ED597E /* Model */,
@@ -138,10 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				63A571D022429CE100ED597E /* AlertController.swift */,
+				63A571CE22429CC200ED597E /* HideKeyboard.swift */,
 				63C72022224025FD000ECE19 /* RoundedButton.swift */,
 				63A571C3224289D800ED597E /* UnderlinedTextField.swift */,
 				63A571C82242922C00ED597E /* UnderlinedButtonText.swift */,
-				63A571CE22429CC200ED597E /* HideKeyboard.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				63A37CC0223BA98F00C26293 /* MainViewController.swift in Sources */,
 				63A571C022426C1800ED597E /* Sort.swift in Sources */,
 				63A571C92242922C00ED597E /* UnderlinedButtonText.swift in Sources */,
-				63A571CB224299A200ED597E /* Global.swift in Sources */,
+				63A571CB224299A200ED597E /* Storage.swift in Sources */,
 				63A571BE22426BF600ED597E /* Pageable.swift in Sources */,
 				63A571D122429CE100ED597E /* AlertController.swift in Sources */,
 				63A571CF22429CC200ED597E /* HideKeyboard.swift in Sources */,
