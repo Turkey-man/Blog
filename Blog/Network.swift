@@ -32,7 +32,8 @@ public class Network {
 
     public static func getData<T: Decodable>(completionHandler: @escaping (T) -> Void) {
         let token = storage.defaults.string(forKey: "token")
-        let headers: HTTPHeaders = ["Authorization": "Bearer \(token!)"]
+        
+        let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
         request(gerRequestUrl, method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in
             let json = response.data
