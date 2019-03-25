@@ -10,8 +10,6 @@ import UIKit
 
 public class NewsTableViewCell: UITableViewCell {
 
-    static let reusebleIdentifier = "custom"
-    
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var simpleLabel: UILabel!
     @IBOutlet weak var simpleProjectTextView: UITextView!

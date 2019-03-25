@@ -21,12 +21,17 @@ public class LoginViewController: UIViewController {
     private let alertController = UIAlertController()
     private let mainVC = MainViewController()
     
+    override public func viewWillAppear(_ animated: Bool) {
+        self.emailTextField.underlined(color: UIColor.gray)
+        self.passwordTextField.underlined(color: UIColor.gray)
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 
         
-        self.emailTextField.underlined(color: UIColor.gray)
-        self.passwordTextField.underlined(color: UIColor.gray)
+//        self.emailTextField.underlined(color: UIColor.gray)
+//        self.passwordTextField.underlined(color: UIColor.gray)
         self.forgotYourPasswordButton.underlineText()
         self.getStartedButton.addTarget(self, action: #selector(getStarted), for: .touchDown)
     }
@@ -73,6 +78,7 @@ public class LoginViewController: UIViewController {
             } else {
                 self.emailTextField.underlined(color: UIColor.gray)
                 self.emailLabel.textColor = UIColor.gray
+                print(login.message)
                 self.alertController.alert(title: "Error", message: "No data to display!", style: .alert, presentOn: viewController)
             }
         }
