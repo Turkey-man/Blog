@@ -9,5 +9,5 @@
 import Foundation
 
 public struct Sort: Codable {
-    let sorted, unsorted: Bool
+    let sorted, unsorted: Bool?
 }

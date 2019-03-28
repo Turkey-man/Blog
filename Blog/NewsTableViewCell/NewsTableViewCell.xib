@@ -13,39 +13,44 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="Blog" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCellIdentifier" rowHeight="144" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="Blog" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitmap" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-Bq-l8d">
-                        <rect key="frame" x="16" y="15" width="145" height="113.5"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bitmap" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpg-Bq-l8d">
+                        <rect key="frame" x="16" y="16.5" width="145" height="112"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="113.5" id="Fjv-Bv-kX7"/>
+                            <constraint firstAttribute="width" constant="145" id="kaG-bk-QPx"/>
+                        </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="These many steps per minute count as BRISK WALK" translatesAutoresizingMaskIntoConstraints="NO" id="ngv-Vd-06C">
-                        <rect key="frame" x="177" y="40" width="198" height="89"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="These many steps per minute count as BRISK WALK" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngv-Vd-06C">
+                        <rect key="frame" x="177" y="40" width="182" height="88.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="19"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TECH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQu-gb-Eck">
-                        <rect key="frame" x="177" y="15" width="40" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TECH" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQu-gb-Eck">
+                        <rect key="frame" x="177" y="16.5" width="166" height="13.5"/>
                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="ngv-Vd-06C" secondAttribute="bottom" constant="4" id="5Ne-xm-kvA"/>
-                    <constraint firstItem="rpg-Bq-l8d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8fu-Lm-Dzo"/>
-                    <constraint firstItem="ngv-Vd-06C" firstAttribute="leading" secondItem="rpg-Bq-l8d" secondAttribute="trailing" constant="16" id="WIF-Ki-0aS"/>
-                    <constraint firstItem="hQu-gb-Eck" firstAttribute="leading" secondItem="rpg-Bq-l8d" secondAttribute="trailing" constant="16" id="Wqm-rn-j3H"/>
-                    <constraint firstItem="hQu-gb-Eck" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="aPM-DR-AOy"/>
-                    <constraint firstItem="ngv-Vd-06C" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="16" id="aq5-yM-Zlo"/>
-                    <constraint firstItem="rpg-Bq-l8d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="gRr-8P-5it"/>
-                    <constraint firstAttribute="bottom" secondItem="rpg-Bq-l8d" secondAttribute="bottom" constant="15" id="rBZ-2n-A7r"/>
-                    <constraint firstItem="ngv-Vd-06C" firstAttribute="top" secondItem="hQu-gb-Eck" secondAttribute="bottom" constant="5" id="ydB-cE-frV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="hQu-gb-Eck" secondAttribute="trailing" constant="16" id="554-L8-nKF"/>
+                    <constraint firstItem="hQu-gb-Eck" firstAttribute="leading" secondItem="rpg-Bq-l8d" secondAttribute="trailing" constant="16" id="J0l-Lw-Mqw"/>
+                    <constraint firstItem="ngv-Vd-06C" firstAttribute="top" secondItem="hQu-gb-Eck" secondAttribute="bottom" constant="10" id="J1C-Ij-huO"/>
+                    <constraint firstAttribute="bottom" secondItem="rpg-Bq-l8d" secondAttribute="bottom" constant="16" id="LT5-EN-2Rs"/>
+                    <constraint firstItem="rpg-Bq-l8d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yqu-c2-1j5"/>
+                    <constraint firstItem="rpg-Bq-l8d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ept-CU-rdF"/>
+                    <constraint firstItem="hQu-gb-Eck" firstAttribute="top" secondItem="rpg-Bq-l8d" secondAttribute="top" id="omf-XX-aAB"/>
+                    <constraint firstItem="ngv-Vd-06C" firstAttribute="leading" secondItem="hQu-gb-Eck" secondAttribute="leading" id="qmv-El-RyG"/>
+                    <constraint firstAttribute="trailing" secondItem="ngv-Vd-06C" secondAttribute="trailing" constant="16" id="u1s-AY-RHu"/>
+                    <constraint firstItem="ngv-Vd-06C" firstAttribute="bottom" secondItem="rpg-Bq-l8d" secondAttribute="bottom" id="utK-V9-xyB"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -7,40 +7,38 @@
 //
 
 import Alamofire
-//"eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIyIiwiZXhwIjoxNTUzNDYyODA3LCJyYW5kb20iOjU4ODMsInJvbGUiOiJST0xFX0NMSUVOVCJ9.kjarz6dGLvgLureFE19C24wXIVGi1n80Q9h7XrOuDINGPk51lsO0J3-gH9hrU_Fz_qR7ZEvPbmbmO1YwhxE5iw"
+
 public class Network {
-    private static let baseUrl = "https://storm.ualegion.com/api/v1/"
-    private static let loginUrl = "security/auth/login"
-    private static let parameters = ["login" : "reader", "password" : "1234567a"]
-    private static let gerRequestUrl = "projects/my"
-    private static let storage = Storage()
+
+    enum URLElemnts: String {
+        case baseUrl = "https://storm.ualegion.com/api/v1/"
+        case loginUrl = "security/auth/login"
+        case gerRequestUrl = "projects/my"
+    }
     
     public static func getToken<T: Decodable>(completionHandler: @escaping (T) -> Void) {
-        request(baseUrl + loginUrl, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
-            let json = response.data
-            goToNetwork(json: json!, completionHandler: completionHandler)
-//            do {
-//                let data = try JSONDecoder().decode(Login.self, from: json!)
-//
-//                self.global.defaults.set(String(data.token!), forKey: "token")
-//                print("NEW DATA")
-//                print(data.token)
-//            } catch {
-//                print(error.localizedDescription)
-//            }
+        let parameters = ["login" : "reader", "password" : "1234567a"]
+        request(URLElemnts.baseUrl.rawValue + URLElemnts.loginUrl.rawValue, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { response in
+            guard let json = response.data else { return }
+            goToNetwork(json: json, completionHandler: completionHandler)
         }
     }
 
     public static func getData<T: Decodable>(completionHandler: @escaping (T) -> Void) {
-        let token = storage.defaults.string(forKey: "token")
-        
+        let storage = Storage()
+        guard let token = storage.defaults.string(forKey: "token") else { return }
         let headers: HTTPHeaders = ["Authorization": "Bearer \(token)"]
         
-        request(baseUrl + gerRequestUrl, method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in
+        request(URLElemnts.baseUrl.rawValue + URLElemnts.gerRequestUrl.rawValue, method: .get, encoding: JSONEncoding.default, headers: headers).responseData { response in
             let json = response.data
-//            print("JSON")
-//            print(json)
-            goToNetwork(json: json!, completionHandler: completionHandler)
+            
+            switch response.response?.statusCode {
+            case ResponseStatusCode.success.rawValue:
+                goToNetwork(json: json!, completionHandler: completionHandler)
+            default:
+                print("response.response?.statusCode = \(String(describing: response.response?.statusCode))")
+                break
+            }
         }
     }
     

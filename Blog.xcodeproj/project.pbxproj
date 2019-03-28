@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63257667223C1E35003CFFE8 /* ObtainedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63257666223C1E35003CFFE8 /* ObtainedData.swift */; };
+		636D80D7224D09990088B008 /* ActivityIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D80D6224D09980088B008 /* ActivityIndicatorController.swift */; };
 		63A37CBE223BA98F00C26293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A37CBD223BA98F00C26293 /* AppDelegate.swift */; };
 		63A37CC0223BA98F00C26293 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A37CBF223BA98F00C26293 /* MainViewController.swift */; };
 		63A37CC3223BA98F00C26293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A37CC1223BA98F00C26293 /* Main.storyboard */; };
@@ -30,11 +31,13 @@
 		63B036CD223E847D0062C791 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B036CC223E847D0062C791 /* Network.swift */; };
 		63C72023224025FD000ECE19 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C72022224025FD000ECE19 /* RoundedButton.swift */; };
 		C7BC72CC7436E81CEEF111C1 /* Pods_Blog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA43F0451C95CBAAACE7A8F9 /* Pods_Blog.framework */; };
+		F0554E90224D1C2A002B3D0E /* ResponceCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0554E8F224D1C2A002B3D0E /* ResponceCodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		40AE00FC53778A9C7E718BAF /* Pods-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blog.release.xcconfig"; path = "Target Support Files/Pods-Blog/Pods-Blog.release.xcconfig"; sourceTree = "<group>"; };
 		63257666223C1E35003CFFE8 /* ObtainedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainedData.swift; sourceTree = "<group>"; };
+		636D80D6224D09980088B008 /* ActivityIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorController.swift; sourceTree = "<group>"; };
 		63A37CBA223BA98F00C26293 /* Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A37CBD223BA98F00C26293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A37CBF223BA98F00C26293 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		63C72022224025FD000ECE19 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		87B6B8474E840EEBD6861DEE /* Pods-Blog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blog.debug.xcconfig"; path = "Target Support Files/Pods-Blog/Pods-Blog.debug.xcconfig"; sourceTree = "<group>"; };
 		BA43F0451C95CBAAACE7A8F9 /* Pods_Blog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0554E8F224D1C2A002B3D0E /* ResponceCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponceCodes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,10 @@
 				63A571C622428CE900ED597E /* LoginViewController.swift */,
 				63A37CBF223BA98F00C26293 /* MainViewController.swift */,
 				63B036CC223E847D0062C791 /* Network.swift */,
+				F0554E8F224D1C2A002B3D0E /* ResponceCodes.swift */,
 				63A571CA224299A200ED597E /* Storage.swift */,
 				63A571CC224299CF00ED597E /* InfoCheck.swift */,
+				636D80D6224D09980088B008 /* ActivityIndicatorController.swift */,
 				63A571D22242AA4E00ED597E /* RegEx.swift */,
 				63A571BA22426BC000ED597E /* Model */,
 				63A571C522428C4D00ED597E /* UI */,
@@ -298,6 +304,8 @@
 				63A37CBE223BA98F00C26293 /* AppDelegate.swift in Sources */,
 				63A37CD3223BCC2600C26293 /* NewsTableViewCell.swift in Sources */,
 				63C72023224025FD000ECE19 /* RoundedButton.swift in Sources */,
+				F0554E90224D1C2A002B3D0E /* ResponceCodes.swift in Sources */,
+				636D80D7224D09990088B008 /* ActivityIndicatorController.swift in Sources */,
 				63A571D32242AA4E00ED597E /* RegEx.swift in Sources */,
 				63B036CD223E847D0062C791 /* Network.swift in Sources */,
 				63A571C4224289D800ED597E /* UnderlinedTextField.swift in Sources */,

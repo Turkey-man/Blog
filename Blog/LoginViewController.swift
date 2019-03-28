@@ -64,7 +64,7 @@ public class LoginViewController: UIViewController {
             self.passwordLabel.textColor = UIColor.red
             return
         }
-        
+    
         Network.getToken { (login: Login) in
             if let newToken = login.token {
             print("NOT NIL")
@@ -74,7 +74,7 @@ public class LoginViewController: UIViewController {
             self.storage.defaults.set(String(enteredEmail), forKey: "email")
             self.storage.defaults.set(String(enteredPassword), forKey: "password")
             self.storage.defaults.set(true, forKey: "userIsRegistered")
-                self.present(self.mainVC, animated: true, completion: nil)
+                self.goToMainVC()
             } else {
                 self.emailTextField.underlined(color: UIColor.gray)
                 self.emailLabel.textColor = UIColor.gray
@@ -105,7 +105,15 @@ public class LoginViewController: UIViewController {
         }
         print("MOVING")
         print(storage.defaults.string(forKey: "token"))
-        self.present(self.mainVC, animated: true, completion: nil)
+        
+        self.goToMainVC()
+    
+    }
+    
+    private func goToMainVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        self.present(controller, animated: true, completion: nil)
     }
 }
 

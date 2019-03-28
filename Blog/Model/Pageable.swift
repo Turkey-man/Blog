@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Pageable: Codable {
-    let offset, pageNumber, pageSize: Int
-    let paged: Bool
-    let sort: Sort
-    let unpaged: Bool
+    let offset, pageNumber, pageSize: Int?
+    let paged: Bool?
+    let sort: Sort?
+    let unpaged: Bool?
 }

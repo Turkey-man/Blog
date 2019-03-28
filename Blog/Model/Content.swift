@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Content: Codable {
-    let id: Int
-    let name, shortName: String
-    let privateAccess: Bool
-    let created, updated: Int
+    let id: Int?
+    let name, shortName: String?
+    let privateAccess: Bool?
+    let created, updated: Int?
 }

@@ -24,8 +24,8 @@ public class InfoCheck {
         }
         
         Network.getToken { (login: Login) in
-            guard login.token != nil else { return }
-            self.storage.defaults.set(String?(login.token!), forKey: "token")
+            guard let token = login.token else { return }
+            self.storage.defaults.set(String?(token), forKey: "token")
             print("GOT THE TOKEN!")
             print(login.token)
             
