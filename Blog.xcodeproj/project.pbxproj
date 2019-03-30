@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63113F43224E44D600E0AC90 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63113F42224E44D600E0AC90 /* MainView.swift */; };
+		63113F45224E589D00E0AC90 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63113F44224E589D00E0AC90 /* MainViewPresenter.swift */; };
+		63113F48224ED49800E0AC90 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63113F47224ED49800E0AC90 /* LoginView.swift */; };
+		63113F4A224ED61600E0AC90 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63113F49224ED61600E0AC90 /* LoginViewPresenter.swift */; };
 		63257667223C1E35003CFFE8 /* ObtainedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63257666223C1E35003CFFE8 /* ObtainedData.swift */; };
 		636D80D7224D09990088B008 /* ActivityIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D80D6224D09980088B008 /* ActivityIndicatorController.swift */; };
 		63A37CBE223BA98F00C26293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A37CBD223BA98F00C26293 /* AppDelegate.swift */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		40AE00FC53778A9C7E718BAF /* Pods-Blog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blog.release.xcconfig"; path = "Target Support Files/Pods-Blog/Pods-Blog.release.xcconfig"; sourceTree = "<group>"; };
+		63113F42224E44D600E0AC90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		63113F44224E589D00E0AC90 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		63113F47224ED49800E0AC90 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		63113F49224ED61600E0AC90 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		63257666223C1E35003CFFE8 /* ObtainedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainedData.swift; sourceTree = "<group>"; };
 		636D80D6224D09980088B008 /* ActivityIndicatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorController.swift; sourceTree = "<group>"; };
 		63A37CBA223BA98F00C26293 /* Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +86,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63113F46224ED44200E0AC90 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63A37CBF223BA98F00C26293 /* MainViewController.swift */,
+				63113F44224E589D00E0AC90 /* MainViewPresenter.swift */,
+				63113F42224E44D600E0AC90 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63113F4B224ED61E00E0AC90 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63A571C622428CE900ED597E /* LoginViewController.swift */,
+				63113F49224ED61600E0AC90 /* LoginViewPresenter.swift */,
+				63113F47224ED49800E0AC90 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		6378E5BB223D583A009171AC /* NewsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +138,8 @@
 			children = (
 				63A37CBD223BA98F00C26293 /* AppDelegate.swift */,
 				63A37CC1223BA98F00C26293 /* Main.storyboard */,
-				63A571C622428CE900ED597E /* LoginViewController.swift */,
-				63A37CBF223BA98F00C26293 /* MainViewController.swift */,
+				63113F4B224ED61E00E0AC90 /* Login */,
+				63113F46224ED44200E0AC90 /* Main */,
 				63B036CC223E847D0062C791 /* Network.swift */,
 				F0554E8F224D1C2A002B3D0E /* ResponceCodes.swift */,
 				63A571CA224299A200ED597E /* Storage.swift */,
@@ -290,8 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A571C722428CE900ED597E /* LoginViewController.swift in Sources */,
+				63113F43224E44D600E0AC90 /* MainView.swift in Sources */,
 				63257667223C1E35003CFFE8 /* ObtainedData.swift in Sources */,
 				63A571C222426C3B00ED597E /* Login.swift in Sources */,
+				63113F48224ED49800E0AC90 /* LoginView.swift in Sources */,
 				63A37CC0223BA98F00C26293 /* MainViewController.swift in Sources */,
 				63A571C022426C1800ED597E /* Sort.swift in Sources */,
 				63A571C92242922C00ED597E /* UnderlinedButtonText.swift in Sources */,
@@ -300,7 +330,9 @@
 				63A571D122429CE100ED597E /* AlertController.swift in Sources */,
 				63A571CF22429CC200ED597E /* HideKeyboard.swift in Sources */,
 				63A571BC22426BE300ED597E /* Content.swift in Sources */,
+				63113F45224E589D00E0AC90 /* MainViewPresenter.swift in Sources */,
 				63A571CD224299CF00ED597E /* InfoCheck.swift in Sources */,
+				63113F4A224ED61600E0AC90 /* LoginViewPresenter.swift in Sources */,
 				63A37CBE223BA98F00C26293 /* AppDelegate.swift in Sources */,
 				63A37CD3223BCC2600C26293 /* NewsTableViewCell.swift in Sources */,
 				63C72023224025FD000ECE19 /* RoundedButton.swift in Sources */,

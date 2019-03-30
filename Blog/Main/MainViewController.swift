@@ -11,9 +11,10 @@ import UIKit
 public class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    private var contentArray = [Content]()
+    public var contentArray = [Content]()
     private let storage = Storage()
-    private var indicator = ActivityIndicatorController()
+    public var indicator = ActivityIndicatorController()
+    public let presenter = MainViewPresenter()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.goToNetwork()
+        presenter.goToNetwork(VC: self, tableView: self.tableView, indicator: self.indicator)
+        //self.goToNetwork()
         indicator.presentIndicator(on: self)
     }
     
