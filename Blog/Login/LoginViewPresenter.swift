@@ -13,8 +13,11 @@ public class LoginViewPresenter {
     public var contentArray = [Content]()
     public let storage = Storage()
     public let indicator = ActivityIndicatorController()
-    public let presenter = MainViewPresenter()
     var view: LoginView?
+    
+    init(view: LoginView) {
+        self.view = view
+    }
     
     func check(enteredEmail: String, enteredPassword: String) {
         self.view?.showInvalidEmail(enteredEmail: enteredEmail, enteredPassword: enteredPassword)

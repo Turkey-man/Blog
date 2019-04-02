@@ -13,6 +13,11 @@ public class MainViewPresenter {
 //    weak public var viewController: UIViewController?
     public var contentArray = [Content]()
     var view: MainView?
+    
+    init(view: MainView) {
+        self.view = view
+    }
+    
     public func goToNetwork() {
         Network.getData { (something: ObtainedData) in
             if let data = something.content {

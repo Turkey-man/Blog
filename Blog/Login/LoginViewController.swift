@@ -17,11 +17,8 @@ public class LoginViewController: UIViewController, LoginView {
     @IBOutlet weak var forgotYourPasswordButton: UIButton!
     @IBOutlet weak var getStartedButton: UIButton!
     
-//    private let infoCheck = InfoCheck()
-//    public let storage = Storage()
     public let alertController = UIAlertController()
-//    public let mainVC = MainViewController()
-    public let presenter = LoginViewPresenter()
+    public var presenter: LoginViewPresenter!
     
     override public func viewWillAppear(_ animated: Bool) {
         self.emailTextField.underlined(color: UIColor.gray)
@@ -30,7 +27,7 @@ public class LoginViewController: UIViewController, LoginView {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.presenter = LoginViewPresenter(view: self)
         self.forgotYourPasswordButton.underlineText()
         self.getStartedButton.addTarget(self, action: #selector(getStarted), for: .touchDown)
     }

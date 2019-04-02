@@ -11,10 +11,12 @@ import UIKit
 public class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MainView {
     @IBOutlet weak var tableView: UITableView!
     
-    public let presenter = MainViewPresenter()
+    public var presenter: MainViewPresenter!
     private var indicator = ActivityIndicatorController()
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = MainViewPresenter(view: self)
         self.registerTableViewCell()
     }
     
