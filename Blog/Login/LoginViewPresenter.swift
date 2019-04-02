@@ -20,14 +20,14 @@ public class LoginViewPresenter {
     }
     
     func check(enteredEmail: String, enteredPassword: String) {
-        self.view?.showInvalidEmail(enteredEmail: enteredEmail, enteredPassword: enteredPassword)
+        self.view?.showInvalidEmail(enteredEmail: enteredEmail)
 //        guard let enteredEmail = viewController.emailTextField.text, enteredEmail.isValidEmail() else {
 //            viewController.alertController.alert(title: "Wrong email", message: "Enter correct email!", style: .alert, presentOn: viewController)
 //            viewController.emailTextField.underlined(color: UIColor.red)
 //            viewController.emailLabel.textColor = UIColor.red
 //            return
 //        }
-        self.view?.showInvalidPassword(enteredEmail: enteredEmail, enteredPassword: enteredPassword)
+        self.view?.showInvalidPassword(enteredPassword: enteredPassword)
 //        guard let enteredPassword = viewController.passwordTextField.text, enteredPassword.count >= 5 else {
 //            viewController.alertController.alert(title: "Invalid password", message: "Password must have at least 5 characters!", style: .alert, presentOn: viewController)
 //            viewController.emailTextField.underlined(color: UIColor.gray)
@@ -60,14 +60,14 @@ public class LoginViewPresenter {
     func loginCheck(enteredEmail: String, enteredPassword: String) {
         let savedEmail = self.storage.defaults.string(forKey: "email")
         let savedPassword = self.storage.defaults.string(forKey: "password")
-        self.view?.showWrongPassword(enteredEmail: enteredEmail, enteredPassword: enteredPassword)
+        self.view?.showWrongEmail(enteredEmail: enteredEmail)
 //        guard let enteredEmail = viewController.emailTextField.text, enteredEmail == savedEmail  else {
 //            viewController.alertController.alert(title: "Wrong email", message: "Enter correct email!", style: .alert, presentOn: viewController)
 //            viewController.emailTextField.underlined(color: UIColor.red)
 //            viewController.emailLabel.textColor = UIColor.red
 //            return
 //        }
-        self.view?.showWrongPassword(enteredEmail: enteredEmail, enteredPassword: enteredPassword)
+        self.view?.showWrongPassword(enteredPassword: enteredPassword)
 //        guard let enteredPassword = viewController.passwordTextField.text, enteredPassword == savedPassword else {
 //            viewController.alertController.alert(title: "Wrong password", message: "You've entered the wrong password!", style: .alert, presentOn: viewController)
 //            viewController.emailTextField.underlined(color: UIColor.gray)
@@ -79,6 +79,5 @@ public class LoginViewPresenter {
         print("MOVING")
         print(self.storage.defaults.string(forKey: "token"))
         self.view?.goToMainVC()
-        //viewController.goToMainVC()
     }
 }
