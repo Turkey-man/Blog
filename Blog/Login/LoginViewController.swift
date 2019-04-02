@@ -8,7 +8,8 @@
 
 import UIKit
 
-public class LoginViewController: UIViewController {
+public class LoginViewController: UIViewController, LoginView {
+
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -17,9 +18,9 @@ public class LoginViewController: UIViewController {
     @IBOutlet weak var getStartedButton: UIButton!
     
 //    private let infoCheck = InfoCheck()
-    public let storage = Storage()
+//    public let storage = Storage()
     public let alertController = UIAlertController()
-    public let mainVC = MainViewController()
+//    public let mainVC = MainViewController()
     public let presenter = LoginViewPresenter()
     
     override public func viewWillAppear(_ animated: Bool) {
@@ -35,17 +36,65 @@ public class LoginViewController: UIViewController {
     }
     
     @objc public func getStarted() {
-        if self.storage.defaults.bool(forKey: "userIsRegistered") {
-                presenter.loginCheck(viewController: self)
+        if self.presenter.storage.defaults.bool(forKey: "userIsRegistered") {
+            presenter.loginCheck(enteredEmail: self.emailTextField.text!, enteredPassword: self.passwordTextField.text!)
 //            self.loginCheck(viewController: self,
 //                            emailTextField: self.emailTextField,
 //                            passwordTextField: self.passwordTextField)
         } else {
-            presenter.check(viewController: self)
+            self.presenter.check(enteredEmail: self.emailTextField.text!, enteredPassword: self.passwordTextField.text!)
 //            self.check(viewController: self,
 //                       emailTextField: self.emailTextField,
 //                       passwordTextField: self.passwordTextField)
         }
+    }
+    
+    func showInvalidEmail(enteredEmail: String, enteredPassword: String) {
+        guard let enteredEmail = self.emailTextField.text, enteredEmail.isValidEmail() else {
+            self.alertController.alert(title: "Wrong email", message: "Enter correct email!", style: .alert, presentOn: self)
+            self.emailTextField.underlined(color: UIColor.red)
+            self.emailLabel.textColor = UIColor.red
+            return
+        }
+    }
+    
+    func showInvalidPassword(enteredEmail: String, enteredPassword: String) {
+        guard let enteredPassword = self.passwordTextField.text, enteredPassword.count >= 5 else {
+            self.alertController.alert(title: "Invalid password", message: "Password must have at least 5 characters!", style: .alert, presentOn: self)
+            self.emailTextField.underlined(color: UIColor.gray)
+            self.emailLabel.textColor = UIColor.gray
+            self.passwordTextField.underlined(color: UIColor.red)
+            self.passwordLabel.textColor = UIColor.red
+            return
+        }
+    }
+    
+    func showWrongEmail(enteredEmail: String, enteredPassword: String) {
+        let savedEmail = self.presenter.storage.defaults.string(forKey: "email")
+        guard let enteredEmail = self.emailTextField.text, enteredEmail == savedEmail  else {
+            self.alertController.alert(title: "Wrong email", message: "Enter correct email!", style: .alert, presentOn: self)
+            self.emailTextField.underlined(color: UIColor.red)
+            self.emailLabel.textColor = UIColor.red
+            return
+        }
+    }
+    
+    func showWrongPassword(enteredEmail: String, enteredPassword: String) {
+        let savedPassword = self.presenter.storage.defaults.string(forKey: "password")
+        guard let enteredPassword = self.passwordTextField.text, enteredPassword == savedPassword else {
+            self.alertController.alert(title: "Wrong password", message: "You've entered the wrong password!", style: .alert, presentOn: self)
+            self.emailTextField.underlined(color: UIColor.gray)
+            self.emailLabel.textColor = UIColor.gray
+            self.passwordTextField.underlined(color: UIColor.red)
+            self.passwordLabel.textColor = UIColor.red
+            return
+        }
+    }
+    
+    func noData() {
+        self.emailTextField.underlined(color: UIColor.gray)
+        self.emailLabel.textColor = UIColor.gray
+        self.alertController.alert(title: "Error", message: "No data to display!", style: .alert, presentOn: self)
     }
 
     //Checking registration information
@@ -109,11 +158,9 @@ public class LoginViewController: UIViewController {
 //        self.goToMainVC()
 //    }
 
-    public func goToMainVC() {
+    func goToMainVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         self.present(controller, animated: true, completion: nil)
     }
 }
-
-

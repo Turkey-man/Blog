@@ -9,6 +9,12 @@
 import UIKit
 
 protocol LoginView {
-    func check(viewController: LoginViewController)
-    func loginCheck(viewController: LoginViewController)
+//    func check(enteredEmail: String, enteredPassword: String)
+//    func loginCheck(enteredEmail: String, enteredPassword: String)
+    func showInvalidEmail(enteredEmail: String, enteredPassword: String)
+    func showInvalidPassword(enteredEmail: String, enteredPassword: String)
+    func showWrongEmail(enteredEmail: String, enteredPassword: String)
+    func showWrongPassword(enteredEmail: String, enteredPassword: String)
+    func goToMainVC()
+    func noData()
 }

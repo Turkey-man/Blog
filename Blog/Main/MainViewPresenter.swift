@@ -8,25 +8,17 @@
 
 import UIKit
 
-public class MainViewPresenter: MainView {
- 
-//    private var indicator = ActivityIndicatorController()
+public class MainViewPresenter {
+
 //    weak public var viewController: UIViewController?
-    
-    public func goToNetwork(VC: MainViewController, tableView: UITableView, indicator: ActivityIndicatorController) {
+    public var contentArray = [Content]()
+    var view: MainView?
+    public func goToNetwork() {
         Network.getData { (something: ObtainedData) in
             if let data = something.content {
-                VC.contentArray = data
+                self.view?.fillArray(data: data)
             }
-            DispatchQueue.main.async {
-                tableView.reloadData()
-                indicator.stopIndicator({
-                    indicator.dismiss(animated: true, completion: nil)
-                })
-            }
+            self.view?.reloadTable()
         }
     }
-    
-    
 }
-

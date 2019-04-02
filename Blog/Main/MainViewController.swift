@@ -8,14 +8,11 @@
 
 import UIKit
 
-public class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+public class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MainView {
     @IBOutlet weak var tableView: UITableView!
     
-    public var contentArray = [Content]()
-    private let storage = Storage()
-    public var indicator = ActivityIndicatorController()
     public let presenter = MainViewPresenter()
-    
+    private var indicator = ActivityIndicatorController()
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.registerTableViewCell()
@@ -23,23 +20,22 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.goToNetwork(VC: self, tableView: self.tableView, indicator: self.indicator)
+        self.presenter.goToNetwork()
         //self.goToNetwork()
-        indicator.presentIndicator(on: self)
+        self.indicator.presentIndicator(on: self)
     }
     
-    private func goToNetwork() {
-        Network.getData { (something: ObtainedData) in
-            if let data = something.content {
-                self.contentArray = data
-            }
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.indicator.stopIndicator({
-                    self.indicator.dismiss(animated: true, completion: nil)
-                })
-            }
+    
+    func fillArray(data: [Codable]) {
+        self.presenter.contentArray = data as! [Content]
+    }
+    
+    func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.indicator.stopIndicator({
+                self.indicator.dismiss(animated: true, completion: nil)
+            })
         }
     }
     
@@ -49,13 +45,13 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contentArray.count
+        return self.presenter.contentArray.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseIdentifier) as! NewsTableViewCell
-        let simple = self.contentArray[indexPath.row].shortName
-        let name = self.contentArray[indexPath.row].name
+        let simple = self.presenter.contentArray[indexPath.row].shortName
+        let name = self.presenter.contentArray[indexPath.row].name
         cell.simpleLabel.text = simple
         
         cell.simpleProjectTextView.text = name

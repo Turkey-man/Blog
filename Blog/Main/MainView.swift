@@ -9,5 +9,7 @@
 import UIKit
 
 protocol MainView {
-    func goToNetwork(VC: MainViewController, tableView: UITableView, indicator: ActivityIndicatorController)
+//    func goToNetwork()
+    func fillArray(data: [Codable])
+    func reloadTable()
 }
