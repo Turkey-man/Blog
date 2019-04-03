@@ -23,10 +23,8 @@ public class MainViewController: UIViewController, UITableViewDataSource, UITabl
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.presenter.goToNetwork()
-        //self.goToNetwork()
         self.indicator.presentIndicator(on: self)
     }
-    
     
     func fillArray(data: [Codable]) {
         self.presenter.contentArray = data as! [Content]

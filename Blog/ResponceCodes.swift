@@ -9,7 +9,7 @@
 import Foundation
 
 public enum ResponseStatusCode: Int {
-    //    Informational
+    //Information
     case `continue` = 100, switchingProtocols, processing
     //Success
     case success = 200, created, accepted, nonAuthoritativeInformation, noContent, resetContent, partialContent, multiStatus, alreadyReported

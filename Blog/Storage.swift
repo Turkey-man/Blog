@@ -10,5 +10,4 @@ import UIKit
 
 public class Storage {
     public let defaults = UserDefaults.standard
-    public let alertController = UIAlertController()
 }

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol MainView {
-//    func goToNetwork()
     func fillArray(data: [Codable])
     func reloadTable()
 }

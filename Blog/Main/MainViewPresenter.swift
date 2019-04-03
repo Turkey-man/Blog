@@ -10,7 +10,6 @@ import UIKit
 
 public class MainViewPresenter {
 
-//    weak public var viewController: UIViewController?
     public var contentArray = [Content]()
     var view: MainView?
     
